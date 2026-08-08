@@ -12,6 +12,7 @@ import Experience from "./components/Experience";
 import ArtCorner from "./components/ArtCorner";
 import InspirationShelf from "./components/InspirationShelf";
 import ThoughtOfDay from "./components/ThoughtOfDay";
+import Guestbook from "./components/Guestbook";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -37,6 +38,8 @@ export default function App() {
         <ArtCorner />
         <InspirationShelf />
         <ThoughtOfDay />
+        
+        <Guestbook />
         <Contact />
       </main>
       <Footer />
