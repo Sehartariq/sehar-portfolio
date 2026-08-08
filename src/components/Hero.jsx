@@ -35,10 +35,10 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          Undergraduate AI student building applied ML & NLP{" "}
-          <span className="doodle">systems</span> — from RAG-powered healthcare
+          Undergraduate AI student building applied ML & NLP {" "}
+           systems; from RAG-powered healthcare
           chatbots to real-time vital-signs classifiers. Currently seeking{" "}
-          <span className="doodle">internships</span> & entry-level roles in
+          internships & entry-level roles in
           AI/ML, data science, and research.
         </motion.p>
 
@@ -51,9 +51,9 @@ export default function Hero() {
           <a className="btn btn-primary" href={profile.resume}>
             🌻 Download Resume
           </a>
-          <a className="btn btn-ghost" href={`mailto:${profile.email}`}>
+          <a className="btn btn-ghost" href="#contact">
             ✉️ Say Hello
-          </a>
+        </a>
         </motion.div>
 
         <div className="hero-stats">
