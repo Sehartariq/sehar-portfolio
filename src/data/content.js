@@ -7,7 +7,7 @@ export const profile = {
   phone: "+92 340 9510105",
   github: "https://github.com/Sehartariq",
   linkedin: "https://www.linkedin.com/in/sehar-tariq-170937350/",
-  resume: "public\SeharTariq_CV.pdf",
+  resume: "/SeharTariq_CV.pdf",
   tagline:
     "Undergraduate AI student building applied ML & NLP systems; from RAG-powered healthcare chatbots to real-time vital-signs classifiers. Currently seeking internships & entry-level roles in AI/ML, data science, and research.",
   status: "open to work",
