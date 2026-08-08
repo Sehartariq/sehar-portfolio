@@ -1,0 +1,44 @@
+.lofi-toggle-wrap {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 55;
+}
+
+.lofi-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-soft);
+  background: var(--paper);
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(122, 96, 51, 0.16);
+  transition: transform 0.2s ease;
+}
+
+.lofi-btn:hover {
+  transform: scale(1.08);
+}
+
+.lofi-playing {
+  animation: lofiSpin 3.5s linear infinite;
+  background: var(--sage);
+}
+
+@keyframes lofiSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .lofi-toggle-wrap {
+    bottom: 18px;
+    left: 18px;
+  }
+  .lofi-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+}

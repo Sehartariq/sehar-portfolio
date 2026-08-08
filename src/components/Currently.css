@@ -1,0 +1,38 @@
+.currently {
+  padding: 24px 26px;
+  width: min(360px, 100%);
+}
+
+.currently-heading {
+  font-size: 20px;
+  color: var(--terracotta);
+  margin: 0 0 14px;
+}
+
+.currently-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.currently-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.currently-icon {
+  font-size: 16px;
+  margin-top: 1px;
+}
+
+.currently-label {
+  font-weight: 700;
+  color: var(--sage-dark);
+}

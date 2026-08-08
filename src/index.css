@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Nunito:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap");
+
+:root {
+  --cream: #faf3e6;
+  --paper: #fffaf1;
+  --paper-2: #f4ead6;
+  --border-soft: #e6d6b8;
+
+  --sage: #7c9473;
+  --sage-dark: #4f6b4b;
+  --terracotta: #c17b56;
+  --gold: #d9a441;
+  --rose: #d98a8a;
+  --sky: #8fb3c7;
+
+  --ink: #4a3f33;
+  --muted: #8a7c68;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Nunito", sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --cream-translucent: rgba(250, 243, 230, 0.82);
+  --note-bg: #fff6d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: 8px;
+  border: 2px solid var(--cream);
+}
+
+/* paper grain texture */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* soft vignette warmth at edges */
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(217, 164, 65, 0.06), transparent 60%);
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 15% 0%, rgba(124, 148, 115, 0.14), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(217, 138, 138, 0.12), transparent 60%);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+.eyebrow {
+  font-family: var(--font-hand);
+  font-size: 22px;
+  color: var(--terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  color: var(--sage-dark);
+  background: var(--paper);
+  white-space: nowrap;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1.5px solid var(--border-soft);
+  border-radius: 22px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(122, 96, 51, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--sage-dark), var(--terracotta) 60%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* wavy scalloped divider used between sections */
+.scallop-divider {
+  width: 100%;
+  height: 26px;
+  background-repeat: repeat-x;
+  background-size: 28px 26px;
+  background-image: radial-gradient(circle at 14px 0, transparent 13px, var(--cream) 14px);
+  position: relative;
+  z-index: 2;
+}
+
+.blink {
+  animation: softPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* hover doodle / sparkle effect — wrap any word in <span className="doodle"> */
+.doodle {
+  position: relative;
+  cursor: default;
+  text-decoration: underline dotted var(--gold);
+  text-underline-offset: 4px;
+}
+
+.doodle::after {
+  content: "✨";
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  font-size: 14px;
+  opacity: 0;
+  transform: scale(0.5) rotate(-15deg);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.doodle:hover {
+  color: var(--terracotta);
+}
+
+.doodle:hover::after {
+  opacity: 1;
+  transform: scale(1) rotate(0deg) translateY(-4px);
+}
+
+/* ---------- night mode ---------- */
+[data-theme="dark"] {
+  --cream: #171622;
+  --paper: #201e2e;
+  --paper-2: #29273a;
+  --border-soft: #3d3950;
+
+  --sage: #8fae82;
+  --sage-dark: #a9c99a;
+  --terracotta: #e0996f;
+  --gold: #e8bc5c;
+  --rose: #e7a3a3;
+  --sky: #9dc3d6;
+
+  --ink: #f1e9d8;
+  --muted: #a89c86;
+
+  --cream-translucent: rgba(23, 22, 34, 0.82);
+  --note-bg: #2c2818;
+}
+
+[data-theme="dark"] body {
+  background: var(--cream);
+}
+
+[data-theme="dark"] .bg-grid {
+  background:
+    radial-gradient(ellipse 70% 45% at 15% 0%, rgba(143, 174, 130, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(231, 163, 163, 0.1), transparent 60%);
+}
+
+[data-theme="dark"] .panel {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--cream);
+}

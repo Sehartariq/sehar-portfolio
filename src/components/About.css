@@ -1,0 +1,51 @@
+.about {
+  padding: 40px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.about-layout {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.about-layout .about-window {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  .about-layout {
+    flex-direction: column;
+  }
+}
+
+.about-window {
+  overflow: hidden;
+}
+
+.about-body {
+  padding: clamp(24px, 4vw, 44px);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.about-answer {
+  color: var(--ink);
+  margin: 0 0 20px;
+  padding-left: 20px;
+  border-left: 3px solid var(--paper-2);
+}
+
+.about-answer-last {
+  margin-bottom: 0;
+  border-left-color: var(--gold);
+}
+
+.about-highlight {
+  color: var(--terracotta);
+  font-weight: 700;
+}

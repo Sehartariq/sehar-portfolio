@@ -1,0 +1,134 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 24px 60px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-frame {
+  width: min(880px, 100%);
+  padding: clamp(28px, 5vw, 60px);
+}
+
+.hero-frame-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.hero-name {
+  font-size: clamp(42px, 8vw, 78px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 10px 0 20px;
+  color: var(--ink);
+}
+
+.hero-tagline {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 46px;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-soft);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--sage);
+  color: #fffef9;
+  border-color: var(--sage);
+}
+
+.btn-primary:hover {
+  background: var(--sage-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 107, 75, 0.3);
+}
+
+.btn-ghost {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.btn-ghost:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.hero-stat {
+  background: var(--paper-2);
+  border-radius: 16px;
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.hero-stat-label {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-scroll-cue {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 20px;
+  color: var(--sage-dark);
+}
+
+.hero-scroll-arrow {
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,69 @@
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(20, 17, 12, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox-card {
+  position: relative;
+  background: var(--paper);
+  border-radius: 18px;
+  border: 1.5px solid var(--border-soft);
+  max-width: min(720px, 92vw);
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 17, 12, 0.55);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(20, 17, 12, 0.8);
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  background: var(--paper-2);
+  display: block;
+}
+
+.lightbox-caption {
+  padding: 16px 22px 20px;
+  text-align: center;
+}
+
+.lightbox-caption h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.lightbox-caption p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
